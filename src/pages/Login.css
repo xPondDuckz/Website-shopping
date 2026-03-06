@@ -1,0 +1,159 @@
+.login-page {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: var(--color-white);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.login-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.login-tab {
+  font-size: 14px;
+  padding-bottom: 8px;
+  color: var(--color-gray-medium);
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.login-tab.active {
+  color: var(--color-black);
+}
+
+.login-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+}
+
+.login-form-wrapper {
+  margin-bottom: 60px;
+  min-height: 200px; /* Prevent large layout shifts when toggling tabs */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-medium);
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: var(--color-gray-medium);
+  font-weight: 300;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--color-black);
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 16px 24px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.form-links {
+  margin-top: 8px;
+}
+
+.form-link {
+  font-size: 10px;
+  color: var(--color-gray-medium);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.register-section {
+  padding-top: 40px;
+  border-top: 1px solid var(--color-gray-light);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.register-text {
+  font-size: 13px;
+  color: var(--color-gray-medium);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.register-btn {
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: 16px 24px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

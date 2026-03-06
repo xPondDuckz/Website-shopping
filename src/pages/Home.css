@@ -1,0 +1,278 @@
+.home-container {
+  width: 100%;
+  padding-top: var(--header-height);
+  padding-bottom: 60px;
+}
+
+/* SECTION 1: New Arrivals Horizontal Slider */
+.new-arrivals-section {
+  padding: 40px;
+  border-bottom: 1px solid var(--color-gray-light);
+  margin-bottom: 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 16px;
+}
+
+.control-btn {
+  color: var(--color-gray-medium);
+  transition: color 0.2s ease;
+}
+
+.control-btn:hover {
+  color: var(--color-black);
+}
+
+.horizontal-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px; /* give shadow/focus room */
+}
+
+/* Hide scrollbars for absolute clean look */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider-item {
+  flex: 0 0 300px; /* Force width of items */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: var(--color-gray-light);
+  margin-bottom: 12px;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.slider-image-container:hover .add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.add-btn:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.slider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slider-name {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.slider-price {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-black);
+}
+
+/* SECTION 2: Lookbook Feed */
+.lookbook-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8vh; /* Large spacing between lookbooks */
+  padding: 0 40px;
+}
+
+.lookbook-feed-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lookbook-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Very tall imagery, almost full screen */
+  background-color: var(--color-gray-light);
+  overflow: hidden;
+}
+
+.lookbook-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Interactive Shop Spots Overlays */
+.shop-spot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: crosshair; /* Classic fashion hover */
+  z-index: 10;
+}
+
+.spot-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.shop-spot:hover .spot-dot {
+  transform: scale(1.3);
+}
+
+.spot-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background-color: var(--color-white);
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  pointer-events: none; /* Don't interfere with the dot click */
+}
+
+/* Show tooltip dynamically on right or left depending on position */
+.shop-spot[style*="left: 6"], .shop-spot[style*="left: 7"], .shop-spot[style*="left: 8"], .shop-spot[style*="left: 9"] .spot-tooltip {
+  left: auto;
+  right: 20px;
+}
+
+.shop-spot:hover .spot-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.spot-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.spot-price {
+  font-size: 11px;
+  color: var(--color-gray-medium);
+}
+
+.lookbook-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.lookbook-title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.shop-the-look-btn {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.shop-the-look-btn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding-top: 60px; /* Smaller mobile header */
+  }
+  
+  .new-arrivals-section {
+    padding: 20px;
+  }
+  
+  .slider-item {
+    flex: 0 0 240px;
+  }
+  
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .lookbook-section {
+    padding: 0;
+  }
+  
+  .lookbook-image-wrapper {
+    height: 75vh;
+  }
+  
+  .lookbook-footer {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .spot-tooltip {
+    display: none; /* Touch environments usually don't rely on hover tooltips like this, keep it clean */
+  }
+}

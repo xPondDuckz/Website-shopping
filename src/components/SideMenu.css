@@ -1,0 +1,136 @@
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: var(--z-index-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -400px; /* Based on typical drawer width */
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--color-white);
+  z-index: var(--z-index-menu);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-medium);
+  transform: translateX(0); /* Start hidden to the left via left property, transform moves it */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 400px) {
+  .side-menu {
+    left: -100%;
+    max-width: 100%;
+  }
+}
+
+.side-menu.open {
+  transform: translateX(100%);
+}
+
+.menu-header {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  padding: 8px 0;
+  margin-left: -8px; 
+  transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+  opacity: 0.6;
+}
+
+.menu-categories {
+  display: flex;
+  gap: 24px;
+  padding: 0 32px 16px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.category-tab {
+  padding-bottom: 4px;
+  position: relative;
+  color: var(--color-gray-medium);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.category-tab.active {
+  color: var(--color-black);
+}
+
+.category-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -17px; /* Align with border-bottom */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-black);
+}
+
+.menu-content {
+  padding: 32px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.subcategory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.collection-highlight {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.subcategory-item {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.subcategory-item a:hover {
+  opacity: 0.6;
+}
+
+.subcategory-spacer {
+  height: 40px;
+}

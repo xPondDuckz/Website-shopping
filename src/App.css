@@ -1,0 +1,13 @@
+/* App specific styles, basically structural */
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  /* If header is transparent over hero, no padding needed top */
+}
+
+/* Add any global app transitions or generic wrapper styles here */

@@ -1,0 +1,128 @@
+.footer {
+  width: 100%;
+  padding: 60px 40px 120px 40px;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+
+.footer-title {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.newsletter-input {
+  border: none;
+  border-bottom: 1px solid var(--color-black);
+  padding: 10px 0;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  outline: none;
+  width: 250px;
+  background: transparent;
+}
+
+.newsletter-input::placeholder {
+  color: var(--color-gray-medium);
+}
+
+.newsletter-btn {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: var(--color-black);
+  transition: opacity 0.2s ease;
+}
+
+.footer-socials a:hover {
+  opacity: 0.6;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.footer-col-title {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-list a {
+  font-size: 13px;
+  color: var(--color-gray-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+  color: var(--color-black);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-gray-medium);
+  letter-spacing: 0.5px;
+}
+
+.footer-copyright {
+  display: flex;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 80px 20px;
+  }
+  
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .newsletter-input {
+    width: 200px;
+  }
+  
+  .footer-links-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+}
